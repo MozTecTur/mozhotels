@@ -1,0 +1,28 @@
+
+<div>
+    <h2><span translate="mozhotelsApp.localTur.detail.title">LocalTur</span> {{vm.localTur.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="mozhotelsApp.localTur.localTurName">LocalTurName</dt></dt>
+        <dd>
+            <span>{{vm.localTur.localTurName}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.localTur.description">Description</dt></dt>
+        <dd>
+            <span>{{vm.localTur.description}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.localTur.province">province</span></dt>
+        <dd>
+            <a ui-sref="province-detail({id:vm.localTur.province.id})">{{vm.localTur.province.provinceName}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

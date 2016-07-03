@@ -1,0 +1,392 @@
+entity Country{
+    countryName ACountry required,
+    description String
+}
+
+enum ACountry {
+MOZAMBIQUE}
+
+entity Region {
+    regionName String required,
+    description String
+}
+
+entity Province {
+    provinceName String required,
+    description String,
+    photoPrincipal ImageBlob
+}
+
+entity LocalTur {
+    localTurName String required,
+    description String
+}
+
+entity InstanceTurType{
+    instanceTurTypeName String required,
+    description String
+}
+
+enum BFacility {
+SERVICE, RESOURCE
+}
+
+entity InstanceFacilityType{
+    instanceFacilityTypeName String required,
+    facility BFacility required,
+    description String
+}
+
+entity InstanceActivityType{
+    instanceActivityTypeName String required,
+    description String
+}
+
+entity InstanceRoomFacilityType{
+    instanceRoomFacilityTypeName String required,
+    facility BFacility required,
+    description String
+}
+
+entity InstancePolicyType{
+	instancePolicyTypeName String required,
+    description String required
+}
+
+entity InstanceInfoType{
+	instanceInfoTypeName String required,
+    description String
+}
+
+enum CRating {
+NA, ONE, TWO, THREE, FOUR, FIVE}
+
+enum ECurrency{
+MZN, USD, EUR, ZAR
+}
+
+entity InstanceTur{
+    instanceTurName String required,
+    description String required,
+    address String required,
+    website String,
+    email String,
+    latitude Double,
+    longitude Double,
+    rooms Integer,
+    beds Integer,
+    floors Integer,
+    rating CRating,
+    currency ECurrency required,
+    contactNumberPrincipal Integer,
+    photoPrincipal ImageBlob
+}
+
+entity InstanceContact{
+    contactNumber Integer required
+}
+
+enum FInstanceArea{
+INDOOR, OUTDOOR
+}
+
+entity InstanceFacility{
+    instanceFacilityName String required,
+    description String,
+    quantity Integer,
+    area FInstanceArea,
+    price BigDecimal required
+}
+
+enum GActivityArea{
+INSIDE, OUTSIDE
+}
+
+entity InstanceActivity{
+    instanceActivityName String required,
+    description String,
+    area GActivityArea,
+    photoPrincipal ImageBlob
+}
+
+entity InstanceRoomFacility{
+    instanceRoomFacilityName String required,
+    facility BFacility required,
+    quantity Integer,
+    area FInstanceArea,
+    price BigDecimal required
+}
+
+entity InstanceRoomType{
+    instanceRoomTypeName String required,
+    description String,
+    quantity Integer,
+    capacityAdults Integer,
+    capacityChildren Integer,
+    price BigDecimal required,
+    photoPrincipal ImageBlob
+}
+
+entity InstancePolicy{
+	instancePolictyName String required,
+    description String
+}
+
+entity InstanceInfo{
+	instanceInfoName String required,
+    description String
+}
+
+enum GGEvaluation{
+WONDERFULL, NICE, NEUTRAL, DONT_RECOMEND
+}
+
+entity InstanceReview{
+	cleanliness Float,
+    roomConfort Float,
+    location Float,
+    serviceStaff Float,
+    sleepQuality Float,
+    valuePrice Float,
+    evaluation GGEvaluation,
+    title String,
+    comment String,
+    active Boolean
+    approval Boolean,
+    userApproval Boolean
+}
+
+
+enum LPictureType{
+PROVINCE, INSTANCETUR, INSTANCEACTIVITY, ROOMTYPE
+}
+
+entity Picture{
+	pictureName String required,
+    description String,
+    picture ImageBlob,
+    type LPictureType
+}
+
+enum HLanguage{
+EN, PT, FR, SP
+}
+
+entity Tourist
+{
+    firstName String required,
+    lastName String required,
+    email String required,
+    phoneNumber String required,
+    countryResidence ACountry required,
+    countryBooking ACountry required,
+    language HLanguage,
+    currency ECurrency
+}
+
+entity GuestTourist{
+    firstName String required,
+    lastName String required,
+    email String required,
+    countryResidence ACountry
+}
+
+enum IBookingState{
+SUBMITED, IN_PROGRESS, BOOKING, CHECK_IN, CHECK_OUT, OVERBOOKING, CANCELED, FAILED
+}
+
+entity Booking{
+    checkIn ZonedDateTime required,
+    checkOut ZonedDateTime required,
+    peopleAdult Integer required,
+    peopleChild Integer required,
+    createdDate ZonedDateTime required,
+    editDate ZonedDateTime,
+    state IBookingState required,
+    rooms Integer required,
+    tax Float required,
+    totalPrice BigDecimal required
+}
+
+enum JPaymentType{
+	CREDIT_CARD, DEBIT_CARD, PAYPAL
+}
+
+enum KPaymentState{
+SUBMITED, IN_PROGRESS, PAID, CANCELED, FAILED
+}
+
+enum LCardType{
+VISA, MASTERCARD, OTHER
+}
+
+entity BookingPayment{
+    type JPaymentType required,
+    currency ECurrency required,
+    amount BigDecimal required,
+    date ZonedDateTime required,
+    state KPaymentState required,
+    cardHolder String required,
+    cardType LCardType required,
+    cardNumber Integer required,
+    cardExpiry Integer required,
+    cardCCV Integer required
+}
+
+entity Info{
+	name String,
+    value String,
+    description String
+}
+
+relationship OneToMany {
+Country{region} to Region{country(countryName)}
+}
+
+relationship OneToMany{
+Region{province} to Province{region(regionName)}
+}
+
+relationship OneToMany{
+Province{localTur} to LocalTur{province(provinceName)}
+}
+
+relationship OneToMany{
+LocalTur{instanceTur} to InstanceTur{localTur(localTurName)}
+}
+
+relationship OneToMany{
+InstanceTurType{instanceTur} to InstanceTur{instanceTurType(instanceTurTypeName)}
+}
+
+relationship OneToMany{
+InstanceFacilityType{instanceFacility} to
+InstanceFacility{instanceFacilityType(instanceFacilityTypeName)}
+}
+
+relationship OneToMany{
+InstanceActivityType{instanceActivity} to
+InstanceActivity{instanceActivityType(instanceActivityTypeName)}
+}
+
+relationship OneToMany{
+InstancePolicyType{instancePolicy} to
+InstancePolicy{instancePolicyType(instancePolicyTypeName)}
+}
+
+relationship OneToMany{
+InstanceInfoType{instanceInfo} to
+InstanceInfo{instanceInfoType(instanceInfoTypeName)}
+}
+
+relationship OneToMany{
+Province{picture} to
+Picture{province(provinceName)}
+}
+
+relationship OneToMany{
+InstanceTur{picture} to
+Picture{instanceTur(instanceTurName)}
+}
+
+relationship OneToMany{
+InstanceRoomType{picture} to
+Picture{instanceRoomType(instanceRoomTypeName)}
+}
+
+relationship OneToMany{
+InstanceTur{picture} to
+Picture{instanceTur(instanceTurName)}
+}
+
+relationship OneToMany{
+InstanceRoomFacilityType{instanceRoomFacility} to
+InstanceRoomFacility{instanceRoomFacilityType(instanceRoomFacilityTypeName)}
+}
+
+relationship ManyToMany{
+InstanceRoomType{instanceRoomFacility(instanceRoomFacilityName)} to
+InstanceRoomFacility{instanceRoomType}
+}
+
+relationship OneToMany{
+InstanceTur{instanceContact} to
+InstanceContact{instanceTur(instanceTurName)}
+}
+
+relationship OneToMany{
+InstanceTur{instanceResource} to
+InstanceFacility{instanceTur(instanceTurName)}
+}
+
+relationship OneToMany{
+InstanceTur{instanceActivity} to
+InstanceActivity{instanceTur(instanceTurName)}
+}
+
+relationship OneToMany{
+InstanceTur{instanceRoomType} to
+InstanceRoomType{instanceTur(instanceTurName)}
+}
+
+relationship OneToMany{
+InstanceTur{instancePolicy} to
+InstancePolicy{instanceTur(instanceTurName)}
+}
+
+relationship OneToMany{
+InstanceTur{instanceInfo} to
+InstanceInfo{instanceTur(instanceTurName)}
+}
+
+relationship OneToMany{
+InstanceTur{instanceReview} to
+InstanceReview{instanceTur(instanceTurName)}
+}
+
+relationship OneToMany{
+Tourist{booking} to
+Booking{tourist}
+}
+
+relationship OneToMany{
+Tourist{instanceReview} to
+InstanceReview{tourist}
+}
+
+relationship OneToMany{
+GuestTourist{booking} to
+Booking{guestTourist}
+}
+
+relationship OneToMany{
+InstanceTur{booking} to
+Booking{instanceTur(instanceTurName)}
+}
+
+relationship ManyToMany{
+Booking{instanceRoomType(instanceRoomTypeName)} to
+InstanceRoomType{booking}
+}
+
+relationship ManyToMany{
+Booking{instanceRoomFacility(instanceRoomFacilityName)} to
+InstanceRoomFacility{booking}
+}
+
+relationship OneToOne{
+BookingPayment{booking} to
+Booking{bookingPayment}
+}
+
+relationship OneToOne{
+Tourist{user} to
+User{tourist}
+}
+
+paginate
+Info,
+InstanceTurType, InstanceRoomType, InstanceRoomFacilityType,
+InstanceActivityType, InstanceFacilityType, InstancePolicyType, InstanceInfoType,
+LocalTur, InstanceTur, InstanceContact, InstancePolicy, InstanceInfo,
+InstanceRoomFacility, InstanceFacility, InstanceActivity, InstanceReview, Booking, BookingPayment with pagination

@@ -1,0 +1,58 @@
+
+<div>
+    <h2><span translate="mozhotelsApp.tourist.detail.title">Tourist</span> {{vm.tourist.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="mozhotelsApp.tourist.firstName">FirstName</dt></dt>
+        <dd>
+            <span>{{vm.tourist.firstName}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.tourist.lastName">LastName</dt></dt>
+        <dd>
+            <span>{{vm.tourist.lastName}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.tourist.email">Email</dt></dt>
+        <dd>
+            <span>{{vm.tourist.email}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.tourist.phoneNumber">PhoneNumber</dt></dt>
+        <dd>
+            <span>{{vm.tourist.phoneNumber}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.tourist.countryResidence">CountryResidence</dt></dt>
+        <dd>
+            <span translate="{{'mozhotelsApp.ACountry.' + vm.tourist.countryResidence}}">{{vm.tourist.countryResidence}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.tourist.countryBooking">CountryBooking</dt></dt>
+        <dd>
+            <span translate="{{'mozhotelsApp.ACountry.' + vm.tourist.countryBooking}}">{{vm.tourist.countryBooking}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.tourist.language">Language</dt></dt>
+        <dd>
+            <span translate="{{'mozhotelsApp.HLanguage.' + vm.tourist.language}}">{{vm.tourist.language}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.tourist.currency">Currency</dt></dt>
+        <dd>
+            <span translate="{{'mozhotelsApp.ECurrency.' + vm.tourist.currency}}">{{vm.tourist.currency}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.tourist.user">user</span></dt>
+        <dd>
+            {{vm.tourist.user.id}}
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

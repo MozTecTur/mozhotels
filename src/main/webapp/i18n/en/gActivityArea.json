@@ -1,0 +1,9 @@
+{
+    "mozhotelsApp": {
+        "GActivityArea" : {
+            "null": "",
+            "INSIDE": "INSIDE",
+            "OUTSIDE": "OUTSIDE"
+        }
+    }
+}

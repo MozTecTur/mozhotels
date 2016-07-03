@@ -1,0 +1,82 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "picture",
+      "otherEntityName": "picture",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "instanceRoomType"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "instanceRoomFacility",
+      "otherEntityName": "instanceRoomFacility",
+      "relationshipType": "many-to-many",
+      "otherEntityField": "instanceRoomFacilityName",
+      "ownerSide": true
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "instanceTur",
+      "otherEntityName": "instanceTur",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "instanceTurName"
+    },
+    {
+      "relationshipId": 4,
+      "relationshipName": "booking",
+      "otherEntityName": "booking",
+      "relationshipType": "many-to-many",
+      "ownerSide": false,
+      "otherEntityRelationshipName": "instanceRoomType"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "instanceRoomTypeName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "quantity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "capacityAdults",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "capacityChildren",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "price",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "photoPrincipal",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    }
+  ],
+  "changelogDate": "20160508220712",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no"
+}

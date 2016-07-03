@@ -1,0 +1,39 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "instanceRoomFacility",
+      "otherEntityName": "instanceRoomFacility",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "instanceRoomFacilityType"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "instanceRoomFacilityTypeName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "facility",
+      "fieldType": "BFacility",
+      "fieldValues": "SERVICE,RESOURCE",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160508220704",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no"
+}

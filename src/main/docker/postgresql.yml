@@ -1,0 +1,12 @@
+version: '2'
+services:
+    mozhotels-postgresql:
+        container_name: mozhotels-postgresql
+        image: postgres:9.5.1
+        # volumes:
+        #     - ~/volumes/jhipster/mozhotels/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=mozhotels
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

@@ -1,0 +1,29 @@
+{
+    "mozhotelsApp": {
+        "instanceRoomFacility" : {
+            "home": {
+                "title": "InstanceRoomFacilities",
+                "createLabel": "Criar um(a) novo(a) InstanceRoomFacility",
+                "createOrEditLabel": "Criar ou editar um(a) InstanceRoomFacility",
+                "search": "Search for InstanceRoomFacility"
+            },
+            "created": "A new InstanceRoomFacility is created with identifier {{ param }}",
+            "updated": "A InstanceRoomFacility is updated with identifier {{ param }}",
+            "deleted": "A InstanceRoomFacility is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) InstanceRoomFacility {{ id }}?"
+            },
+            "detail": {
+                "title": "InstanceRoomFacility"
+            },
+            "instanceRoomFacilityName": "InstanceRoomFacilityName",
+            "facility": "Facility",
+            "quantity": "Quantity",
+            "area": "Area",
+            "price": "Price",
+            "instanceRoomFacilityType": "InstanceRoomFacilityType",
+            "instanceRoomType": "InstanceRoomType",
+            "booking": "Booking"
+        }
+    }
+}

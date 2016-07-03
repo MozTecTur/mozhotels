@@ -1,0 +1,34 @@
+
+<div>
+    <h2><span translate="mozhotelsApp.province.detail.title">Province</span> {{vm.province.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="mozhotelsApp.province.provinceName">ProvinceName</dt></dt>
+        <dd>
+            <span>{{vm.province.provinceName}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.province.description">Description</dt></dt>
+        <dd>
+            <span>{{vm.province.description}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.province.photoPrincipal">PhotoPrincipal</dt></dt>
+        <dd>
+            <img data-ng-src="{{'data:' + vm.province.photoPrincipalContentType + ';base64,' + vm.province.photoPrincipal}}" style="max-width: 100%;" ng-if="vm.province.photoPrincipal"/>
+            <div>{{vm.province.photoPrincipalContentType}}, {{vm.byteSize(vm.province.photoPrincipal)}}</div>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.province.region">region</span></dt>
+        <dd>
+            <a ui-sref="region-detail({id:vm.province.region.id})">{{vm.province.region.regionName}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

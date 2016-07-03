@@ -1,0 +1,122 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myTouristLabel" translate="mozhotelsApp.tourist.home.createOrEditLabel">Create or edit a Tourist</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.tourist.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.tourist.firstName" for="field_firstName">FirstName</label>
+            <input type="text" class="form-control" name="firstName" id="field_firstName"
+                    ng-model="vm.tourist.firstName"
+                    required />
+            <div ng-show="editForm.firstName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.firstName.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.tourist.lastName" for="field_lastName">LastName</label>
+            <input type="text" class="form-control" name="lastName" id="field_lastName"
+                    ng-model="vm.tourist.lastName"
+                    required />
+            <div ng-show="editForm.lastName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.lastName.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.tourist.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="vm.tourist.email"
+                    required />
+            <div ng-show="editForm.email.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.email.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.tourist.phoneNumber" for="field_phoneNumber">PhoneNumber</label>
+            <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                    ng-model="vm.tourist.phoneNumber"
+                    required />
+            <div ng-show="editForm.phoneNumber.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.phoneNumber.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.tourist.countryResidence" for="field_countryResidence">CountryResidence</label>
+            <select class="form-control" name="countryResidence" ng-model="vm.tourist.countryResidence" id="field_countryResidence" required>
+                <option value="MOZAMBIQUE" translate="mozhotelsApp.ACountry.MOZAMBIQUE">MOZAMBIQUE</option>
+            </select>
+            <div ng-show="editForm.countryResidence.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.countryResidence.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.tourist.countryBooking" for="field_countryBooking">CountryBooking</label>
+            <select class="form-control" name="countryBooking" ng-model="vm.tourist.countryBooking" id="field_countryBooking" required>
+                <option value="MOZAMBIQUE" translate="mozhotelsApp.ACountry.MOZAMBIQUE">MOZAMBIQUE</option>
+            </select>
+            <div ng-show="editForm.countryBooking.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.countryBooking.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.tourist.language" for="field_language">Language</label>
+            <select class="form-control" name="language" ng-model="vm.tourist.language" id="field_language">
+                <option value="EN" translate="mozhotelsApp.HLanguage.EN">EN</option>
+                <option value="PT" translate="mozhotelsApp.HLanguage.PT">PT</option>
+                <option value="FR" translate="mozhotelsApp.HLanguage.FR">FR</option>
+                <option value="SP" translate="mozhotelsApp.HLanguage.SP">SP</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.tourist.currency" for="field_currency">Currency</label>
+            <select class="form-control" name="currency" ng-model="vm.tourist.currency" id="field_currency">
+                <option value="MZN" translate="mozhotelsApp.ECurrency.MZN">MZN</option>
+                <option value="USD" translate="mozhotelsApp.ECurrency.USD">USD</option>
+                <option value="EUR" translate="mozhotelsApp.ECurrency.EUR">EUR</option>
+                <option value="ZAR" translate="mozhotelsApp.ECurrency.ZAR">ZAR</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label translate="mozhotelsApp.tourist.user" for="field_user">user</label>
+            <select class="form-control" id="field_user" name="user" ng-model="vm.tourist.user" ng-options="user as user.id for user in vm.users track by user.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

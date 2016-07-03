@@ -1,0 +1,39 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "instanceFacility",
+      "otherEntityName": "instanceFacility",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "instanceFacilityType"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "instanceFacilityTypeName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "facility",
+      "fieldType": "BFacility",
+      "fieldValues": "SERVICE,RESOURCE",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160508220702",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no"
+}

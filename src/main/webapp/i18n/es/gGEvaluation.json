@@ -1,0 +1,11 @@
+{
+    "mozhotelsApp": {
+        "GGEvaluation" : {
+            "null": "",
+            "WONDERFULL": "WONDERFULL",
+            "NICE": "NICE",
+            "NEUTRAL": "NEUTRAL",
+            "DONT_RECOMEND": "DONT_RECOMEND"
+        }
+    }
+}

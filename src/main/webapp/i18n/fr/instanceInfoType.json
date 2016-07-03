@@ -1,0 +1,24 @@
+{
+    "mozhotelsApp": {
+        "instanceInfoType" : {
+            "home": {
+                "title": "InstanceInfoTypes",
+                "createLabel": "Créer un nouveau InstanceInfoType",
+                "createOrEditLabel": "Créer ou éditer un InstanceInfoType",
+                "search": "Recherche pour InstanceInfoType"
+            },
+            "created": "Un nouveau InstanceInfoType a été créé avec l'identifiant {{ param }}",
+            "updated": "Le InstanceInfoType avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le InstanceInfoType avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le InstanceInfoType {{ id }} ?"
+            },
+            "detail": {
+                "title": "InstanceInfoType"
+            },
+            "instanceInfoTypeName": "InstanceInfoTypeName",
+            "description": "Description",
+            "instanceInfo": "InstanceInfo"
+        }
+    }
+}

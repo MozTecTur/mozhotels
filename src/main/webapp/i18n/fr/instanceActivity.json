@@ -1,0 +1,27 @@
+{
+    "mozhotelsApp": {
+        "instanceActivity" : {
+            "home": {
+                "title": "InstanceActivities",
+                "createLabel": "Créer un nouveau InstanceActivity",
+                "createOrEditLabel": "Créer ou éditer un InstanceActivity",
+                "search": "Recherche pour InstanceActivity"
+            },
+            "created": "Un nouveau InstanceActivity a été créé avec l'identifiant {{ param }}",
+            "updated": "Le InstanceActivity avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le InstanceActivity avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le InstanceActivity {{ id }} ?"
+            },
+            "detail": {
+                "title": "InstanceActivity"
+            },
+            "instanceActivityName": "InstanceActivityName",
+            "description": "Description",
+            "area": "Area",
+            "photoPrincipal": "PhotoPrincipal",
+            "instanceActivityType": "InstanceActivityType",
+            "instanceTur": "InstanceTur"
+        }
+    }
+}

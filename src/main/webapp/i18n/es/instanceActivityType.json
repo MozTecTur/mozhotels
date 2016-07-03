@@ -1,0 +1,24 @@
+{
+    "mozhotelsApp": {
+        "instanceActivityType" : {
+            "home": {
+                "title": "InstanceActivityTypes",
+                "createLabel": "Crear nuevo InstanceActivityType",
+                "createOrEditLabel": "Crear o editar InstanceActivityType",
+                "search": "Search for InstanceActivityType"
+            },
+            "created": "Un nuevo InstanceActivityType ha sido creado con el identificador {{ param }}",
+            "updated": "Un InstanceActivityType ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un InstanceActivityType ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar InstanceActivityType {{ id }}?"
+            },
+            "detail": {
+                "title": "InstanceActivityType"
+            },
+            "instanceActivityTypeName": "InstanceActivityTypeName",
+            "description": "Description",
+            "instanceActivity": "InstanceActivity"
+        }
+    }
+}

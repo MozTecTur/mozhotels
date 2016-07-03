@@ -1,0 +1,10 @@
+{
+    "mozhotelsApp": {
+        "LCardType" : {
+            "null": "",
+            "VISA": "VISA",
+            "MASTERCARD": "MASTERCARD",
+            "OTHER": "OTHER"
+        }
+    }
+}

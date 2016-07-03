@@ -1,0 +1,49 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "instanceActivityType",
+      "otherEntityName": "instanceActivityType",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "instanceActivityTypeName"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "instanceTur",
+      "otherEntityName": "instanceTur",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "instanceTurName"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "instanceActivityName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "area",
+      "fieldType": "GActivityArea",
+      "fieldValues": "INSIDE,OUTSIDE"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "photoPrincipal",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    }
+  ],
+  "changelogDate": "20160508220710",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no"
+}

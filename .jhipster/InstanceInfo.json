@@ -1,0 +1,37 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "instanceInfoType",
+      "otherEntityName": "instanceInfoType",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "instanceInfoTypeName"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "instanceTur",
+      "otherEntityName": "instanceTur",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "instanceTurName"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "instanceInfoName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160508220714",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no"
+}

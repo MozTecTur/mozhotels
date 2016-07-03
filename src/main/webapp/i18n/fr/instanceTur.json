@@ -1,0 +1,46 @@
+{
+    "mozhotelsApp": {
+        "instanceTur" : {
+            "home": {
+                "title": "InstanceTurs",
+                "createLabel": "Créer un nouveau InstanceTur",
+                "createOrEditLabel": "Créer ou éditer un InstanceTur",
+                "search": "Recherche pour InstanceTur"
+            },
+            "created": "Un nouveau InstanceTur a été créé avec l'identifiant {{ param }}",
+            "updated": "Le InstanceTur avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le InstanceTur avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le InstanceTur {{ id }} ?"
+            },
+            "detail": {
+                "title": "InstanceTur"
+            },
+            "instanceTurName": "InstanceTurName",
+            "description": "Description",
+            "address": "Address",
+            "website": "Website",
+            "email": "Email",
+            "latitude": "Latitude",
+            "longitude": "Longitude",
+            "rooms": "Rooms",
+            "beds": "Beds",
+            "floors": "Floors",
+            "rating": "Rating",
+            "currency": "Currency",
+            "contactNumberPrincipal": "ContactNumberPrincipal",
+            "photoPrincipal": "PhotoPrincipal",
+            "picture": "Picture",
+            "instanceContact": "InstanceContact",
+            "instanceResource": "InstanceResource",
+            "instanceActivity": "InstanceActivity",
+            "instanceRoomType": "InstanceRoomType",
+            "instancePolicy": "InstancePolicy",
+            "instanceInfo": "InstanceInfo",
+            "instanceReview": "InstanceReview",
+            "booking": "Booking",
+            "localTur": "LocalTur",
+            "instanceTurType": "InstanceTurType"
+        }
+    }
+}

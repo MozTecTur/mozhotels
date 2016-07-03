@@ -1,0 +1,33 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "instancePolicy",
+      "otherEntityName": "instancePolicy",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "instancePolicyType"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "instancePolicyTypeName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160508220705",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no"
+}

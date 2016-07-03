@@ -1,0 +1,111 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myInstanceRoomTypeLabel" translate="mozhotelsApp.instanceRoomType.home.createOrEditLabel">Create or edit a InstanceRoomType</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.instanceRoomType.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceRoomType.instanceRoomTypeName" for="field_instanceRoomTypeName">InstanceRoomTypeName</label>
+            <input type="text" class="form-control" name="instanceRoomTypeName" id="field_instanceRoomTypeName"
+                    ng-model="vm.instanceRoomType.instanceRoomTypeName"
+                    required />
+            <div ng-show="editForm.instanceRoomTypeName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.instanceRoomTypeName.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceRoomType.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.instanceRoomType.description"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceRoomType.quantity" for="field_quantity">Quantity</label>
+            <input type="number" class="form-control" name="quantity" id="field_quantity"
+                    ng-model="vm.instanceRoomType.quantity"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceRoomType.capacityAdults" for="field_capacityAdults">CapacityAdults</label>
+            <input type="number" class="form-control" name="capacityAdults" id="field_capacityAdults"
+                    ng-model="vm.instanceRoomType.capacityAdults"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceRoomType.capacityChildren" for="field_capacityChildren">CapacityChildren</label>
+            <input type="number" class="form-control" name="capacityChildren" id="field_capacityChildren"
+                    ng-model="vm.instanceRoomType.capacityChildren"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceRoomType.price" for="field_price">Price</label>
+            <input type="number" class="form-control" name="price" id="field_price"
+                    ng-model="vm.instanceRoomType.price"
+                    required />
+            <div ng-show="editForm.price.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.price.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.price.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setPhotoPrincipal($file, vm.instanceRoomType)" ngf-pattern="'image/*'">
+            <label class="control-label" translate="mozhotelsApp.instanceRoomType.photoPrincipal" for="field_photoPrincipal">PhotoPrincipal</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.instanceRoomType.photoPrincipalContentType + ';base64,' + vm.instanceRoomType.photoPrincipal}}" style="max-height: 100px;" ng-if="vm.instanceRoomType.photoPrincipal"/>
+                <div class="help-block clearfix">
+                    <span class="pull-left">{{vm.instanceRoomType.photoPrincipalContentType}}, {{byteSize(vm.instanceRoomType.photoPrincipal)}}</span>
+                    <button ng-click="vm.instanceRoomType.photoPrincipal=null;vm.instanceRoomType.photoPrincipalContentType=null;"
+                            ng-if="vm.instanceRoomType.photoPrincipal"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="file" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setPhotoPrincipal($file, vm.instanceRoomType)" accept="image/*" translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="photoPrincipal" id="field_photoPrincipal"
+                    ng-model="vm.instanceRoomType.photoPrincipal"
+                     />
+            <input type="hidden" class="form-control" name="photoPrincipalContentType" id="field_photoPrincipalContentType"
+                    ng-model="vm.instanceRoomType.photoPrincipalContentType" />
+        </div>
+
+        <div class="form-group">
+            <label translate="mozhotelsApp.instanceRoomType.instanceRoomFacility" for="field_instanceRoomFacility">instanceRoomFacility</label>
+            <select class="form-control" id="field_instanceRoomFacility" multiple name="instanceRoomFacility" ng-model="vm.instanceRoomType.instanceRoomFacilitys" ng-options="instanceRoomFacility as instanceRoomFacility.instanceRoomFacilityName for instanceRoomFacility in vm.instanceroomfacilitys track by instanceRoomFacility.id"></select>
+        </div>
+        <div class="form-group">
+            <label translate="mozhotelsApp.instanceRoomType.instanceTur" for="field_instanceTur">instanceTur</label>
+            <select class="form-control" id="field_instanceTur" name="instanceTur" ng-model="vm.instanceRoomType.instanceTur" ng-options="instanceTur as instanceTur.instanceTurName for instanceTur in vm.instanceturs track by instanceTur.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

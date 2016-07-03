@@ -1,0 +1,25 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "instanceTur",
+      "otherEntityName": "instanceTur",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "instanceTurName"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "contactNumber",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160508220708",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no"
+}

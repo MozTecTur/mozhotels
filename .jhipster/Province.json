@@ -1,0 +1,50 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "localTur",
+      "otherEntityName": "localTur",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "province"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "picture",
+      "otherEntityName": "picture",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "province"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "region",
+      "otherEntityName": "region",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "regionName"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "provinceName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "photoPrincipal",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    }
+  ],
+  "changelogDate": "20160508220759",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no"
+}

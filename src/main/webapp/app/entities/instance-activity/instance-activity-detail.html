@@ -1,0 +1,44 @@
+
+<div>
+    <h2><span translate="mozhotelsApp.instanceActivity.detail.title">InstanceActivity</span> {{vm.instanceActivity.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="mozhotelsApp.instanceActivity.instanceActivityName">InstanceActivityName</dt></dt>
+        <dd>
+            <span>{{vm.instanceActivity.instanceActivityName}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceActivity.description">Description</dt></dt>
+        <dd>
+            <span>{{vm.instanceActivity.description}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceActivity.area">Area</dt></dt>
+        <dd>
+            <span translate="{{'mozhotelsApp.GActivityArea.' + vm.instanceActivity.area}}">{{vm.instanceActivity.area}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceActivity.photoPrincipal">PhotoPrincipal</dt></dt>
+        <dd>
+            <img data-ng-src="{{'data:' + vm.instanceActivity.photoPrincipalContentType + ';base64,' + vm.instanceActivity.photoPrincipal}}" style="max-width: 100%;" ng-if="vm.instanceActivity.photoPrincipal"/>
+            <div>{{vm.instanceActivity.photoPrincipalContentType}}, {{vm.byteSize(vm.instanceActivity.photoPrincipal)}}</div>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceActivity.instanceActivityType">instanceActivityType</span></dt>
+        <dd>
+            <a ui-sref="instance-activity-type-detail({id:vm.instanceActivity.instanceActivityType.id})">{{vm.instanceActivity.instanceActivityType.instanceActivityTypeName}}</a>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceActivity.instanceTur">instanceTur</span></dt>
+        <dd>
+            <a ui-sref="instance-tur-detail({id:vm.instanceActivity.instanceTur.id})">{{vm.instanceActivity.instanceTur.instanceTurName}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

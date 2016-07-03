@@ -1,0 +1,35 @@
+{
+  "generator-jhipster": {
+    "jhipsterVersion": "3.0.0",
+    "baseName": "mozhotels",
+    "packageName": "com.mozhotels.srit",
+    "packageFolder": "com/mozhotels/srit",
+    "serverPort": "8080",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "elasticsearch",
+    "buildTool": "maven",
+    "enableSocialSignIn": true,
+    "rememberMeKey": "34e8974eda4e57e0d2ce1801c9c6925ed29b9a84",
+    "useSass": true,
+    "applicationType": "monolith",
+    "testFrameworks": [
+      "gatling",
+      "cucumber",
+      "protractor"
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "pt-pt",
+    "languages": [
+      "pt-pt",
+      "en",
+      "fr",
+      "es"
+    ]
+  }
+}

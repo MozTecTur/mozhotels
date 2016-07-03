@@ -1,0 +1,24 @@
+{
+    "mozhotelsApp": {
+        "instancePolicyType" : {
+            "home": {
+                "title": "InstancePolicyTypes",
+                "createLabel": "Créer un nouveau InstancePolicyType",
+                "createOrEditLabel": "Créer ou éditer un InstancePolicyType",
+                "search": "Recherche pour InstancePolicyType"
+            },
+            "created": "Un nouveau InstancePolicyType a été créé avec l'identifiant {{ param }}",
+            "updated": "Le InstancePolicyType avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le InstancePolicyType avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le InstancePolicyType {{ id }} ?"
+            },
+            "detail": {
+                "title": "InstancePolicyType"
+            },
+            "instancePolicyTypeName": "InstancePolicyTypeName",
+            "description": "Description",
+            "instancePolicy": "InstancePolicy"
+        }
+    }
+}

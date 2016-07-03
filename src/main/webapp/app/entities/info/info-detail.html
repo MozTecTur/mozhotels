@@ -1,0 +1,28 @@
+
+<div>
+    <h2><span translate="mozhotelsApp.info.detail.title">Info</span> {{vm.info.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="mozhotelsApp.info.name">Name</dt></dt>
+        <dd>
+            <span>{{vm.info.name}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.info.value">Value</dt></dt>
+        <dd>
+            <span>{{vm.info.value}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.info.description">Description</dt></dt>
+        <dd>
+            <span>{{vm.info.description}}<span>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

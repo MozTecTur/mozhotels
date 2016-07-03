@@ -1,0 +1,32 @@
+{
+    "mozhotelsApp": {
+        "bookingPayment" : {
+            "home": {
+                "title": "BookingPayments",
+                "createLabel": "Criar um(a) novo(a) BookingPayment",
+                "createOrEditLabel": "Criar ou editar um(a) BookingPayment",
+                "search": "Search for BookingPayment"
+            },
+            "created": "A new BookingPayment is created with identifier {{ param }}",
+            "updated": "A BookingPayment is updated with identifier {{ param }}",
+            "deleted": "A BookingPayment is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) BookingPayment {{ id }}?"
+            },
+            "detail": {
+                "title": "BookingPayment"
+            },
+            "type": "Type",
+            "currency": "Currency",
+            "amount": "Amount",
+            "date": "Date",
+            "state": "State",
+            "cardHolder": "CardHolder",
+            "cardType": "CardType",
+            "cardNumber": "CardNumber",
+            "cardExpiry": "CardExpiry",
+            "cardCCV": "CardCCV",
+            "booking": "Booking"
+        }
+    }
+}

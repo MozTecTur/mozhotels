@@ -1,0 +1,33 @@
+
+<div>
+    <h2><span translate="mozhotelsApp.instancePolicy.detail.title">InstancePolicy</span> {{vm.instancePolicy.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="mozhotelsApp.instancePolicy.instancePolictyName">InstancePolictyName</dt></dt>
+        <dd>
+            <span>{{vm.instancePolicy.instancePolictyName}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instancePolicy.description">Description</dt></dt>
+        <dd>
+            <span>{{vm.instancePolicy.description}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instancePolicy.instancePolicyType">instancePolicyType</span></dt>
+        <dd>
+            <a ui-sref="instance-policy-type-detail({id:vm.instancePolicy.instancePolicyType.id})">{{vm.instancePolicy.instancePolicyType.instancePolicyTypeName}}</a>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instancePolicy.instanceTur">instanceTur</span></dt>
+        <dd>
+            <a ui-sref="instance-tur-detail({id:vm.instancePolicy.instanceTur.id})">{{vm.instancePolicy.instanceTur.instanceTurName}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

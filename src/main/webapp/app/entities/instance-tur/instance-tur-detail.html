@@ -1,0 +1,94 @@
+
+<div>
+    <h2><span translate="mozhotelsApp.instanceTur.detail.title">InstanceTur</span> {{vm.instanceTur.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="mozhotelsApp.instanceTur.instanceTurName">InstanceTurName</dt></dt>
+        <dd>
+            <span>{{vm.instanceTur.instanceTurName}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceTur.description">Description</dt></dt>
+        <dd>
+            <span>{{vm.instanceTur.description}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceTur.address">Address</dt></dt>
+        <dd>
+            <span>{{vm.instanceTur.address}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceTur.website">Website</dt></dt>
+        <dd>
+            <span>{{vm.instanceTur.website}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceTur.email">Email</dt></dt>
+        <dd>
+            <span>{{vm.instanceTur.email}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceTur.latitude">Latitude</dt></dt>
+        <dd>
+            <span>{{vm.instanceTur.latitude}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceTur.longitude">Longitude</dt></dt>
+        <dd>
+            <span>{{vm.instanceTur.longitude}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceTur.rooms">Rooms</dt></dt>
+        <dd>
+            <span>{{vm.instanceTur.rooms}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceTur.beds">Beds</dt></dt>
+        <dd>
+            <span>{{vm.instanceTur.beds}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceTur.floors">Floors</dt></dt>
+        <dd>
+            <span>{{vm.instanceTur.floors}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceTur.rating">Rating</dt></dt>
+        <dd>
+            <span translate="{{'mozhotelsApp.CRating.' + vm.instanceTur.rating}}">{{vm.instanceTur.rating}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceTur.currency">Currency</dt></dt>
+        <dd>
+            <span translate="{{'mozhotelsApp.ECurrency.' + vm.instanceTur.currency}}">{{vm.instanceTur.currency}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceTur.contactNumberPrincipal">ContactNumberPrincipal</dt></dt>
+        <dd>
+            <span>{{vm.instanceTur.contactNumberPrincipal}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceTur.photoPrincipal">PhotoPrincipal</dt></dt>
+        <dd>
+            <img data-ng-src="{{'data:' + vm.instanceTur.photoPrincipalContentType + ';base64,' + vm.instanceTur.photoPrincipal}}" style="max-width: 100%;" ng-if="vm.instanceTur.photoPrincipal"/>
+            <div>{{vm.instanceTur.photoPrincipalContentType}}, {{vm.byteSize(vm.instanceTur.photoPrincipal)}}</div>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceTur.localTur">localTur</span></dt>
+        <dd>
+            <a ui-sref="local-tur-detail({id:vm.instanceTur.localTur.id})">{{vm.instanceTur.localTur.localTurName}}</a>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceTur.instanceTurType">instanceTurType</span></dt>
+        <dd>
+            <a ui-sref="instance-tur-type-detail({id:vm.instanceTur.instanceTurType.id})">{{vm.instanceTur.instanceTurType.instanceTurTypeName}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

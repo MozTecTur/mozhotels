@@ -1,0 +1,11 @@
+{
+    "mozhotelsApp": {
+        "LPictureType" : {
+            "null": "",
+            "PROVINCE": "PROVINCE",
+            "INSTANCETUR": "INSTANCETUR",
+            "INSTANCEACTIVITY": "INSTANCEACTIVITY",
+            "ROOMTYPE": "ROOMTYPE"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "mozhotelsApp": {
+        "instanceFacilityType" : {
+            "home": {
+                "title": "InstanceFacilityTypes",
+                "createLabel": "Créer un nouveau InstanceFacilityType",
+                "createOrEditLabel": "Créer ou éditer un InstanceFacilityType",
+                "search": "Recherche pour InstanceFacilityType"
+            },
+            "created": "Un nouveau InstanceFacilityType a été créé avec l'identifiant {{ param }}",
+            "updated": "Le InstanceFacilityType avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le InstanceFacilityType avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le InstanceFacilityType {{ id }} ?"
+            },
+            "detail": {
+                "title": "InstanceFacilityType"
+            },
+            "instanceFacilityTypeName": "InstanceFacilityTypeName",
+            "facility": "Facility",
+            "description": "Description",
+            "instanceFacility": "InstanceFacility"
+        }
+    }
+}

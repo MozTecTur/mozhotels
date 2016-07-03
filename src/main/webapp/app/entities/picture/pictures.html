@@ -1,0 +1,93 @@
+<div>
+    <h2 translate="mozhotelsApp.picture.home.title">Pictures</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="picture.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  translate="mozhotelsApp.picture.home.createLabel">
+                        Create new Picture
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'mozhotelsApp.picture.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="global.field.id">ID</span></th>
+                    <th><span translate="mozhotelsApp.picture.pictureName">PictureName</span></th>
+                    <th><span translate="mozhotelsApp.picture.description">Description</span></th>
+                    <th><span translate="mozhotelsApp.picture.picture">Picture</span></th>
+                    <th><span translate="mozhotelsApp.picture.type">Type</span></th>
+                    <th><span translate="mozhotelsApp.picture.province">province</span></th>
+                    <th><span translate="mozhotelsApp.picture.instanceTur">instanceTur</span></th>
+                    <th><span translate="mozhotelsApp.picture.instanceRoomType">instanceRoomType</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="picture in vm.pictures track by picture.id">
+                    <td><a ui-sref="picture-detail({id:picture.id})">{{picture.id}}</a></td>
+                    <td>{{picture.pictureName}}</td>
+                    <td>{{picture.description}}</td>
+                    <td>
+                        <img data-ng-src="{{'data:' + picture.pictureContentType + ';base64,' + picture.picture}}" style="max-height: 30px;" ng-if="picture.picture"/> {{picture.pictureContentType}} {{byteSize(picture.picture)}}
+                    </td>
+                    <td translate="{{'mozhotelsApp.LPictureType.' + picture.type}}">{{picture.type}}</td>
+                    <td>
+                        <a ui-sref="province-detail({id:picture.province.id})">{{picture.province.provinceName}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="instance-tur-detail({id:picture.instanceTur.id})">{{picture.instanceTur.instanceTurName}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="instance-room-type-detail({id:picture.instanceRoomType.id})">{{picture.instanceRoomType.instanceRoomTypeName}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="picture-detail({id:picture.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="picture.edit({id:picture.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="picture.delete({id:picture.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

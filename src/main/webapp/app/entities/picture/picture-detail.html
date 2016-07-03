@@ -1,0 +1,49 @@
+
+<div>
+    <h2><span translate="mozhotelsApp.picture.detail.title">Picture</span> {{vm.picture.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="mozhotelsApp.picture.pictureName">PictureName</dt></dt>
+        <dd>
+            <span>{{vm.picture.pictureName}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.picture.description">Description</dt></dt>
+        <dd>
+            <span>{{vm.picture.description}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.picture.picture">Picture</dt></dt>
+        <dd>
+            <img data-ng-src="{{'data:' + vm.picture.pictureContentType + ';base64,' + vm.picture.picture}}" style="max-width: 100%;" ng-if="vm.picture.picture"/>
+            <div>{{vm.picture.pictureContentType}}, {{vm.byteSize(vm.picture.picture)}}</div>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.picture.type">Type</dt></dt>
+        <dd>
+            <span translate="{{'mozhotelsApp.LPictureType.' + vm.picture.type}}">{{vm.picture.type}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.picture.province">province</span></dt>
+        <dd>
+            <a ui-sref="province-detail({id:vm.picture.province.id})">{{vm.picture.province.provinceName}}</a>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.picture.instanceTur">instanceTur</span></dt>
+        <dd>
+            <a ui-sref="instance-tur-detail({id:vm.picture.instanceTur.id})">{{vm.picture.instanceTur.instanceTurName}}</a>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.picture.instanceRoomType">instanceRoomType</span></dt>
+        <dd>
+            <a ui-sref="instance-room-type-detail({id:vm.picture.instanceRoomType.id})">{{vm.picture.instanceRoomType.instanceRoomTypeName}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

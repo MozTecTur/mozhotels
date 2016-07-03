@@ -1,0 +1,68 @@
+
+<div>
+    <h2><span translate="mozhotelsApp.bookingPayment.detail.title">BookingPayment</span> {{vm.bookingPayment.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="mozhotelsApp.bookingPayment.type">Type</dt></dt>
+        <dd>
+            <span translate="{{'mozhotelsApp.JPaymentType.' + vm.bookingPayment.type}}">{{vm.bookingPayment.type}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.bookingPayment.currency">Currency</dt></dt>
+        <dd>
+            <span translate="{{'mozhotelsApp.ECurrency.' + vm.bookingPayment.currency}}">{{vm.bookingPayment.currency}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.bookingPayment.amount">Amount</dt></dt>
+        <dd>
+            <span>{{vm.bookingPayment.amount}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.bookingPayment.date">Date</dt></dt>
+        <dd>
+            <span>{{vm.bookingPayment.date | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.bookingPayment.state">State</dt></dt>
+        <dd>
+            <span translate="{{'mozhotelsApp.KPaymentState.' + vm.bookingPayment.state}}">{{vm.bookingPayment.state}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.bookingPayment.cardHolder">CardHolder</dt></dt>
+        <dd>
+            <span>{{vm.bookingPayment.cardHolder}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.bookingPayment.cardType">CardType</dt></dt>
+        <dd>
+            <span translate="{{'mozhotelsApp.LCardType.' + vm.bookingPayment.cardType}}">{{vm.bookingPayment.cardType}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.bookingPayment.cardNumber">CardNumber</dt></dt>
+        <dd>
+            <span>{{vm.bookingPayment.cardNumber}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.bookingPayment.cardExpiry">CardExpiry</dt></dt>
+        <dd>
+            <span>{{vm.bookingPayment.cardExpiry}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.bookingPayment.cardCCV">CardCCV</dt></dt>
+        <dd>
+            <span>{{vm.bookingPayment.cardCCV}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.bookingPayment.booking">booking</span></dt>
+        <dd>
+            <a ui-sref="booking-detail({id:vm.bookingPayment.booking.id})">{{vm.bookingPayment.booking.id}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

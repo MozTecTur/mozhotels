@@ -1,0 +1,28 @@
+{
+    "mozhotelsApp": {
+        "picture" : {
+            "home": {
+                "title": "Pictures",
+                "createLabel": "Criar um(a) novo(a) Picture",
+                "createOrEditLabel": "Criar ou editar um(a) Picture",
+                "search": "Search for Picture"
+            },
+            "created": "A new Picture is created with identifier {{ param }}",
+            "updated": "A Picture is updated with identifier {{ param }}",
+            "deleted": "A Picture is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) Picture {{ id }}?"
+            },
+            "detail": {
+                "title": "Picture"
+            },
+            "pictureName": "PictureName",
+            "description": "Description",
+            "picture": "Picture",
+            "type": "Type",
+            "province": "Province",
+            "instanceTur": "InstanceTur",
+            "instanceRoomType": "InstanceRoomType"
+        }
+    }
+}

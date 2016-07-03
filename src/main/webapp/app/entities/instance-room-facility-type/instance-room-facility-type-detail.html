@@ -1,0 +1,28 @@
+
+<div>
+    <h2><span translate="mozhotelsApp.instanceRoomFacilityType.detail.title">InstanceRoomFacilityType</span> {{vm.instanceRoomFacilityType.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="mozhotelsApp.instanceRoomFacilityType.instanceRoomFacilityTypeName">InstanceRoomFacilityTypeName</dt></dt>
+        <dd>
+            <span>{{vm.instanceRoomFacilityType.instanceRoomFacilityTypeName}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceRoomFacilityType.facility">Facility</dt></dt>
+        <dd>
+            <span translate="{{'mozhotelsApp.BFacility.' + vm.instanceRoomFacilityType.facility}}">{{vm.instanceRoomFacilityType.facility}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceRoomFacilityType.description">Description</dt></dt>
+        <dd>
+            <span>{{vm.instanceRoomFacilityType.description}}<span>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

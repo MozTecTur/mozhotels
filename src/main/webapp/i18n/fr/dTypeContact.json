@@ -1,0 +1,9 @@
+{
+    "mozhotelsApp": {
+        "DTypeContact" : {
+            "null": "",
+            "MOBILE": "MOBILE",
+            "OFFICE": "OFFICE"
+        }
+    }
+}

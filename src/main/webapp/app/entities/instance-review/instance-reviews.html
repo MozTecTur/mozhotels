@@ -1,0 +1,107 @@
+<div>
+    <h2 translate="mozhotelsApp.instanceReview.home.title">InstanceReviews</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="instance-review.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  translate="mozhotelsApp.instanceReview.home.createLabel">
+                        Create new InstanceReview
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'mozhotelsApp.instanceReview.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="cleanliness"><span translate="mozhotelsApp.instanceReview.cleanliness">Cleanliness</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="roomConfort"><span translate="mozhotelsApp.instanceReview.roomConfort">RoomConfort</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="location"><span translate="mozhotelsApp.instanceReview.location">Location</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="serviceStaff"><span translate="mozhotelsApp.instanceReview.serviceStaff">ServiceStaff</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="sleepQuality"><span translate="mozhotelsApp.instanceReview.sleepQuality">SleepQuality</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="valuePrice"><span translate="mozhotelsApp.instanceReview.valuePrice">ValuePrice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="evaluation"><span translate="mozhotelsApp.instanceReview.evaluation">Evaluation</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="title"><span translate="mozhotelsApp.instanceReview.title">Title</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="comment"><span translate="mozhotelsApp.instanceReview.comment">Comment</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="active"><span translate="mozhotelsApp.instanceReview.active">Active</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="approval"><span translate="mozhotelsApp.instanceReview.approval">Approval</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="userApproval"><span translate="mozhotelsApp.instanceReview.userApproval">UserApproval</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="instanceTur.instanceTurName"><span translate="mozhotelsApp.instanceReview.instanceTur">instanceTur</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="tourist.id"><span translate="mozhotelsApp.instanceReview.tourist">tourist</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="instanceReview in vm.instanceReviews track by instanceReview.id">
+                    <td><a ui-sref="instance-review-detail({id:instanceReview.id})">{{instanceReview.id}}</a></td>
+                    <td>{{instanceReview.cleanliness}}</td>
+                    <td>{{instanceReview.roomConfort}}</td>
+                    <td>{{instanceReview.location}}</td>
+                    <td>{{instanceReview.serviceStaff}}</td>
+                    <td>{{instanceReview.sleepQuality}}</td>
+                    <td>{{instanceReview.valuePrice}}</td>
+                    <td translate="{{'mozhotelsApp.GGEvaluation.' + instanceReview.evaluation}}">{{instanceReview.evaluation}}</td>
+                    <td>{{instanceReview.title}}</td>
+                    <td>{{instanceReview.comment}}</td>
+                    <td>{{instanceReview.active}}</td>
+                    <td>{{instanceReview.approval}}</td>
+                    <td>{{instanceReview.userApproval}}</td>
+                    <td>
+                        <a ui-sref="instance-tur-detail({id:instanceReview.instanceTur.id})">{{instanceReview.instanceTur.instanceTurName}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="tourist-detail({id:instanceReview.tourist.id})">{{instanceReview.tourist.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="instance-review-detail({id:instanceReview.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="instance-review.edit({id:instanceReview.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="instance-review.delete({id:instanceReview.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

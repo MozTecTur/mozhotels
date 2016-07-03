@@ -1,0 +1,103 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "booking",
+      "otherEntityName": "booking",
+      "relationshipType": "one-to-one",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "bookingPayment"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "type",
+      "fieldType": "JPaymentType",
+      "fieldValues": "CREDIT_CARD,DEBIT_CARD,PAYPAL",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "currency",
+      "fieldType": "ECurrency",
+      "fieldValues": "MZN,USD,EUR,ZAR",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "amount",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "date",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "state",
+      "fieldType": "KPaymentState",
+      "fieldValues": "SUBMITED,IN_PROGRESS,PAID,CANCELED,FAILED",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "cardHolder",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "cardType",
+      "fieldType": "LCardType",
+      "fieldValues": "VISA,MASTERCARD,OTHER",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "cardNumber",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "cardExpiry",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 10,
+      "fieldName": "cardCCV",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160508220719",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no"
+}

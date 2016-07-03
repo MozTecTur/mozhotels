@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span translate="mozhotelsApp.instanceRoomFacility.detail.title">InstanceRoomFacility</span> {{vm.instanceRoomFacility.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="mozhotelsApp.instanceRoomFacility.instanceRoomFacilityName">InstanceRoomFacilityName</dt></dt>
+        <dd>
+            <span>{{vm.instanceRoomFacility.instanceRoomFacilityName}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceRoomFacility.facility">Facility</dt></dt>
+        <dd>
+            <span translate="{{'mozhotelsApp.BFacility.' + vm.instanceRoomFacility.facility}}">{{vm.instanceRoomFacility.facility}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceRoomFacility.quantity">Quantity</dt></dt>
+        <dd>
+            <span>{{vm.instanceRoomFacility.quantity}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceRoomFacility.area">Area</dt></dt>
+        <dd>
+            <span translate="{{'mozhotelsApp.FInstanceArea.' + vm.instanceRoomFacility.area}}">{{vm.instanceRoomFacility.area}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceRoomFacility.price">Price</dt></dt>
+        <dd>
+            <span>{{vm.instanceRoomFacility.price}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.instanceRoomFacility.instanceRoomFacilityType">instanceRoomFacilityType</span></dt>
+        <dd>
+            <a ui-sref="instance-room-facility-type-detail({id:vm.instanceRoomFacility.instanceRoomFacilityType.id})">{{vm.instanceRoomFacility.instanceRoomFacilityType.instanceRoomFacilityTypeName}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

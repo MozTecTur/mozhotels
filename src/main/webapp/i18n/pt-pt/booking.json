@@ -1,0 +1,37 @@
+{
+    "mozhotelsApp": {
+        "booking" : {
+            "home": {
+                "title": "Bookings",
+                "createLabel": "Criar um(a) novo(a) Booking",
+                "createOrEditLabel": "Criar ou editar um(a) Booking",
+                "search": "Search for Booking"
+            },
+            "created": "A new Booking is created with identifier {{ param }}",
+            "updated": "A Booking is updated with identifier {{ param }}",
+            "deleted": "A Booking is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) Booking {{ id }}?"
+            },
+            "detail": {
+                "title": "Booking"
+            },
+            "checkIn": "CheckIn",
+            "checkOut": "CheckOut",
+            "peopleAdult": "PeopleAdult",
+            "peopleChild": "PeopleChild",
+            "createdDate": "CreatedDate",
+            "editDate": "EditDate",
+            "state": "State",
+            "rooms": "Rooms",
+            "tax": "Tax",
+            "totalPrice": "TotalPrice",
+            "instanceRoomType": "InstanceRoomType",
+            "instanceRoomFacility": "InstanceRoomFacility",
+            "tourist": "Tourist",
+            "guestTourist": "GuestTourist",
+            "instanceTur": "InstanceTur",
+            "bookingPayment": "BookingPayment"
+        }
+    }
+}

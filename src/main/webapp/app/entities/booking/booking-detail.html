@@ -1,0 +1,92 @@
+
+<div>
+    <h2><span translate="mozhotelsApp.booking.detail.title">Booking</span> {{vm.booking.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="mozhotelsApp.booking.checkIn">CheckIn</dt></dt>
+        <dd>
+            <span>{{vm.booking.checkIn | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.booking.checkOut">CheckOut</dt></dt>
+        <dd>
+            <span>{{vm.booking.checkOut | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.booking.peopleAdult">PeopleAdult</dt></dt>
+        <dd>
+            <span>{{vm.booking.peopleAdult}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.booking.peopleChild">PeopleChild</dt></dt>
+        <dd>
+            <span>{{vm.booking.peopleChild}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.booking.createdDate">CreatedDate</dt></dt>
+        <dd>
+            <span>{{vm.booking.createdDate | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.booking.editDate">EditDate</dt></dt>
+        <dd>
+            <span>{{vm.booking.editDate | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.booking.state">State</dt></dt>
+        <dd>
+            <span translate="{{'mozhotelsApp.IBookingState.' + vm.booking.state}}">{{vm.booking.state}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.booking.rooms">Rooms</dt></dt>
+        <dd>
+            <span>{{vm.booking.rooms}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.booking.tax">Tax</dt></dt>
+        <dd>
+            <span>{{vm.booking.tax}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.booking.totalPrice">TotalPrice</dt></dt>
+        <dd>
+            <span>{{vm.booking.totalPrice}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.booking.instanceRoomType">instanceRoomType</span></dt>
+        <dd>
+            <span ng-repeat="instanceRoomType in vm.booking.instanceRoomTypes">
+                <a ui-sref="instance-room-type-detail({id: {{instanceRoomType.id}}})">{{instanceRoomType.instanceRoomTypeName}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.booking.instanceRoomFacility">instanceRoomFacility</span></dt>
+        <dd>
+            <span ng-repeat="instanceRoomFacility in vm.booking.instanceRoomFacilitys">
+                <a ui-sref="instance-room-facility-detail({id: {{instanceRoomFacility.id}}})">{{instanceRoomFacility.instanceRoomFacilityName}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.booking.tourist">tourist</span></dt>
+        <dd>
+            <a ui-sref="tourist-detail({id:vm.booking.tourist.id})">{{vm.booking.tourist.id}}</a>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.booking.guestTourist">guestTourist</span></dt>
+        <dd>
+            <a ui-sref="guest-tourist-detail({id:vm.booking.guestTourist.id})">{{vm.booking.guestTourist.id}}</a>
+        </dd>
+        <hr>
+        <dt><span translate="mozhotelsApp.booking.instanceTur">instanceTur</span></dt>
+        <dd>
+            <a ui-sref="instance-tur-detail({id:vm.booking.instanceTur.id})">{{vm.booking.instanceTur.instanceTurName}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

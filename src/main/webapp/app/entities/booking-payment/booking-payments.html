@@ -1,0 +1,99 @@
+<div>
+    <h2 translate="mozhotelsApp.bookingPayment.home.title">BookingPayments</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="booking-payment.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  translate="mozhotelsApp.bookingPayment.home.createLabel">
+                        Create new BookingPayment
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'mozhotelsApp.bookingPayment.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="type"><span translate="mozhotelsApp.bookingPayment.type">Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="currency"><span translate="mozhotelsApp.bookingPayment.currency">Currency</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="amount"><span translate="mozhotelsApp.bookingPayment.amount">Amount</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="date"><span translate="mozhotelsApp.bookingPayment.date">Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="state"><span translate="mozhotelsApp.bookingPayment.state">State</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="cardHolder"><span translate="mozhotelsApp.bookingPayment.cardHolder">CardHolder</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="cardType"><span translate="mozhotelsApp.bookingPayment.cardType">CardType</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="cardNumber"><span translate="mozhotelsApp.bookingPayment.cardNumber">CardNumber</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="cardExpiry"><span translate="mozhotelsApp.bookingPayment.cardExpiry">CardExpiry</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="cardCCV"><span translate="mozhotelsApp.bookingPayment.cardCCV">CardCCV</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="booking.id"><span translate="mozhotelsApp.bookingPayment.booking">booking</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="bookingPayment in vm.bookingPayments track by bookingPayment.id">
+                    <td><a ui-sref="booking-payment-detail({id:bookingPayment.id})">{{bookingPayment.id}}</a></td>
+                    <td translate="{{'mozhotelsApp.JPaymentType.' + bookingPayment.type}}">{{bookingPayment.type}}</td>
+                    <td translate="{{'mozhotelsApp.ECurrency.' + bookingPayment.currency}}">{{bookingPayment.currency}}</td>
+                    <td>{{bookingPayment.amount}}</td>
+                    <td>{{bookingPayment.date | date:'medium'}}</td>
+                    <td translate="{{'mozhotelsApp.KPaymentState.' + bookingPayment.state}}">{{bookingPayment.state}}</td>
+                    <td>{{bookingPayment.cardHolder}}</td>
+                    <td translate="{{'mozhotelsApp.LCardType.' + bookingPayment.cardType}}">{{bookingPayment.cardType}}</td>
+                    <td>{{bookingPayment.cardNumber}}</td>
+                    <td>{{bookingPayment.cardExpiry}}</td>
+                    <td>{{bookingPayment.cardCCV}}</td>
+                    <td>
+                        <a ui-sref="booking-detail({id:bookingPayment.booking.id})">{{bookingPayment.booking.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="booking-payment-detail({id:bookingPayment.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="booking-payment.edit({id:bookingPayment.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="booking-payment.delete({id:bookingPayment.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

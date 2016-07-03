@@ -1,0 +1,23 @@
+{
+    "mozhotelsApp": {
+        "instanceContact" : {
+            "home": {
+                "title": "InstanceContacts",
+                "createLabel": "Crear nuevo InstanceContact",
+                "createOrEditLabel": "Crear o editar InstanceContact",
+                "search": "Search for InstanceContact"
+            },
+            "created": "Un nuevo InstanceContact ha sido creado con el identificador {{ param }}",
+            "updated": "Un InstanceContact ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un InstanceContact ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar InstanceContact {{ id }}?"
+            },
+            "detail": {
+                "title": "InstanceContact"
+            },
+            "contactNumber": "ContactNumber",
+            "instanceTur": "InstanceTur"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "mozhotelsApp": {
+        "localTur" : {
+            "home": {
+                "title": "LocalTurs",
+                "createLabel": "Crear nuevo LocalTur",
+                "createOrEditLabel": "Crear o editar LocalTur",
+                "search": "Search for LocalTur"
+            },
+            "created": "Un nuevo LocalTur ha sido creado con el identificador {{ param }}",
+            "updated": "Un LocalTur ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un LocalTur ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar LocalTur {{ id }}?"
+            },
+            "detail": {
+                "title": "LocalTur"
+            },
+            "localTurName": "LocalTurName",
+            "description": "Description",
+            "instanceTur": "InstanceTur",
+            "province": "Province"
+        }
+    }
+}

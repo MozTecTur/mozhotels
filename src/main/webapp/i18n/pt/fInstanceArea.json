@@ -1,0 +1,9 @@
+{
+    "mozhotelsApp": {
+        "FInstanceArea" : {
+            "null": "",
+            "INDOOR": "INDOOR",
+            "OUTDOOR": "OUTDOOR"
+        }
+    }
+}

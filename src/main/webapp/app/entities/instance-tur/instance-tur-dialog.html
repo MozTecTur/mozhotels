@@ -1,0 +1,171 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myInstanceTurLabel" translate="mozhotelsApp.instanceTur.home.createOrEditLabel">Create or edit a InstanceTur</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.instanceTur.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceTur.instanceTurName" for="field_instanceTurName">InstanceTurName</label>
+            <input type="text" class="form-control" name="instanceTurName" id="field_instanceTurName"
+                    ng-model="vm.instanceTur.instanceTurName"
+                    required />
+            <div ng-show="editForm.instanceTurName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.instanceTurName.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceTur.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.instanceTur.description"
+                    required />
+            <div ng-show="editForm.description.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.description.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceTur.address" for="field_address">Address</label>
+            <input type="text" class="form-control" name="address" id="field_address"
+                    ng-model="vm.instanceTur.address"
+                    required />
+            <div ng-show="editForm.address.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.address.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceTur.website" for="field_website">Website</label>
+            <input type="text" class="form-control" name="website" id="field_website"
+                    ng-model="vm.instanceTur.website"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceTur.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="vm.instanceTur.email"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceTur.latitude" for="field_latitude">Latitude</label>
+            <input type="number" class="form-control" name="latitude" id="field_latitude"
+                    ng-model="vm.instanceTur.latitude"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceTur.longitude" for="field_longitude">Longitude</label>
+            <input type="number" class="form-control" name="longitude" id="field_longitude"
+                    ng-model="vm.instanceTur.longitude"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceTur.rooms" for="field_rooms">Rooms</label>
+            <input type="number" class="form-control" name="rooms" id="field_rooms"
+                    ng-model="vm.instanceTur.rooms"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceTur.beds" for="field_beds">Beds</label>
+            <input type="number" class="form-control" name="beds" id="field_beds"
+                    ng-model="vm.instanceTur.beds"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceTur.floors" for="field_floors">Floors</label>
+            <input type="number" class="form-control" name="floors" id="field_floors"
+                    ng-model="vm.instanceTur.floors"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceTur.rating" for="field_rating">Rating</label>
+            <select class="form-control" name="rating" ng-model="vm.instanceTur.rating" id="field_rating">
+                <option value="NA" translate="mozhotelsApp.CRating.NA">NA</option>
+                <option value="ONE" translate="mozhotelsApp.CRating.ONE">ONE</option>
+                <option value="TWO" translate="mozhotelsApp.CRating.TWO">TWO</option>
+                <option value="THREE" translate="mozhotelsApp.CRating.THREE">THREE</option>
+                <option value="FOUR" translate="mozhotelsApp.CRating.FOUR">FOUR</option>
+                <option value="FIVE" translate="mozhotelsApp.CRating.FIVE">FIVE</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceTur.currency" for="field_currency">Currency</label>
+            <select class="form-control" name="currency" ng-model="vm.instanceTur.currency" id="field_currency" required>
+                <option value="MZN" translate="mozhotelsApp.ECurrency.MZN">MZN</option>
+                <option value="USD" translate="mozhotelsApp.ECurrency.USD">USD</option>
+                <option value="EUR" translate="mozhotelsApp.ECurrency.EUR">EUR</option>
+                <option value="ZAR" translate="mozhotelsApp.ECurrency.ZAR">ZAR</option>
+            </select>
+            <div ng-show="editForm.currency.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.currency.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceTur.contactNumberPrincipal" for="field_contactNumberPrincipal">ContactNumberPrincipal</label>
+            <input type="number" class="form-control" name="contactNumberPrincipal" id="field_contactNumberPrincipal"
+                    ng-model="vm.instanceTur.contactNumberPrincipal"
+                     />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setPhotoPrincipal($file, vm.instanceTur)" ngf-pattern="'image/*'">
+            <label class="control-label" translate="mozhotelsApp.instanceTur.photoPrincipal" for="field_photoPrincipal">PhotoPrincipal</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.instanceTur.photoPrincipalContentType + ';base64,' + vm.instanceTur.photoPrincipal}}" style="max-height: 100px;" ng-if="vm.instanceTur.photoPrincipal"/>
+                <div class="help-block clearfix">
+                    <span class="pull-left">{{vm.instanceTur.photoPrincipalContentType}}, {{byteSize(vm.instanceTur.photoPrincipal)}}</span>
+                    <button ng-click="vm.instanceTur.photoPrincipal=null;vm.instanceTur.photoPrincipalContentType=null;"
+                            ng-if="vm.instanceTur.photoPrincipal"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="file" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setPhotoPrincipal($file, vm.instanceTur)" accept="image/*" translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="photoPrincipal" id="field_photoPrincipal"
+                    ng-model="vm.instanceTur.photoPrincipal"
+                     />
+            <input type="hidden" class="form-control" name="photoPrincipalContentType" id="field_photoPrincipalContentType"
+                    ng-model="vm.instanceTur.photoPrincipalContentType" />
+        </div>
+
+        <div class="form-group">
+            <label translate="mozhotelsApp.instanceTur.localTur" for="field_localTur">localTur</label>
+            <select class="form-control" id="field_localTur" name="localTur" ng-model="vm.instanceTur.localTur" ng-options="localTur as localTur.localTurName for localTur in vm.localturs track by localTur.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="mozhotelsApp.instanceTur.instanceTurType" for="field_instanceTurType">instanceTurType</label>
+            <select class="form-control" id="field_instanceTurType" name="instanceTurType" ng-model="vm.instanceTur.instanceTurType" ng-options="instanceTurType as instanceTurType.instanceTurTypeName for instanceTurType in vm.instanceturtypes track by instanceTurType.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

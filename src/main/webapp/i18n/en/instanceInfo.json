@@ -1,0 +1,25 @@
+{
+    "mozhotelsApp": {
+        "instanceInfo" : {
+            "home": {
+                "title": "InstanceInfos",
+                "createLabel": "Create a new InstanceInfo",
+                "createOrEditLabel": "Create or edit a InstanceInfo",
+                "search": "Search for InstanceInfo"
+            },
+            "created": "A new InstanceInfo is created with identifier {{ param }}",
+            "updated": "A InstanceInfo is updated with identifier {{ param }}",
+            "deleted": "A InstanceInfo is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete InstanceInfo {{ id }}?"
+            },
+            "detail": {
+                "title": "InstanceInfo"
+            },
+            "instanceInfoName": "InstanceInfoName",
+            "description": "Description",
+            "instanceInfoType": "InstanceInfoType",
+            "instanceTur": "InstanceTur"
+        }
+    }
+}

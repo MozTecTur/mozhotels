@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+    <property name="now" value="sysdate" dbms="oracle"/>
+
+    <property name="autoIncrement" value="true" dbms="mysql,h2,postgresql,oracle"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle"/>
+
+    <!--
+        Added the entity Booking.
+    -->
+    <changeSet id="20160508220718" author="jhipster">
+        <createTable tableName="booking">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="check_in" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="check_out" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="people_adult" type="integer">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="people_child" type="integer">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="created_date" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="edit_date" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="state" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="rooms" type="integer">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="tax" type="${floatType}">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="total_price" type="decimal(10,2)">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="tourist_id" type="bigint"/>
+            <column name="guest_tourist_id" type="bigint"/>
+            <column name="instance_tur_id" type="bigint"/>
+            <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="booking" columnName="check_in" columnDataType="datetime"/>
+        <dropDefaultValue tableName="booking" columnName="check_out" columnDataType="datetime"/>
+        <dropDefaultValue tableName="booking" columnName="created_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="booking" columnName="edit_date" columnDataType="datetime"/>
+                <createTable tableName="booking_instance_room_type">
+            <column name="instance_room_types_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="bookings_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="bookings_id, instance_room_types_id" tableName="booking_instance_room_type"/>
+
+        <addForeignKeyConstraint baseColumnNames="bookings_id"
+                                 baseTableName="booking_instance_room_type"
+                                 constraintName="fk_booking_instance_room_type_instanceroomtype_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="booking"/>
+
+        <addForeignKeyConstraint baseColumnNames="instance_room_types_id"
+                                 baseTableName="booking_instance_room_type"
+                                 constraintName="fk_booking_instance_room_type_booking_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="instance_room_type"/>
+                <createTable tableName="booking_instance_room_facility">
+            <column name="instance_room_facilitys_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="bookings_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="bookings_id, instance_room_facilitys_id" tableName="booking_instance_room_facility"/>
+
+        <addForeignKeyConstraint baseColumnNames="bookings_id"
+                                 baseTableName="booking_instance_room_facility"
+                                 constraintName="fk_booking_instance_room_facility_instanceroomfacility_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="booking"/>
+
+        <addForeignKeyConstraint baseColumnNames="instance_room_facilitys_id"
+                                 baseTableName="booking_instance_room_facility"
+                                 constraintName="fk_booking_instance_room_facility_booking_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="instance_room_facility"/>
+        
+        <addForeignKeyConstraint baseColumnNames="tourist_id"
+                                 baseTableName="booking"
+                                 constraintName="fk_booking_tourist_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tourist"/>
+
+        <addForeignKeyConstraint baseColumnNames="guest_tourist_id"
+                                 baseTableName="booking"
+                                 constraintName="fk_booking_guesttourist_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="guest_tourist"/>
+
+        <addForeignKeyConstraint baseColumnNames="instance_tur_id"
+                                 baseTableName="booking"
+                                 constraintName="fk_booking_instancetur_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="instance_tur"/>
+
+    </changeSet>
+</databaseChangeLog>

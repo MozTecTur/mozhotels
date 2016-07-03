@@ -1,0 +1,31 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "region",
+      "otherEntityName": "region",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "country"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "countryName",
+      "fieldType": "ACountry",
+      "fieldValues": "MOZAMBIQUE",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20160508220757",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no"
+}

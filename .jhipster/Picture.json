@@ -1,0 +1,56 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "province",
+      "otherEntityName": "province",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "provinceName"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "instanceTur",
+      "otherEntityName": "instanceTur",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "instanceTurName"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "instanceRoomType",
+      "otherEntityName": "instanceRoomType",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "instanceRoomTypeName"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "pictureName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "picture",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "type",
+      "fieldType": "LPictureType",
+      "fieldValues": "PROVINCE,INSTANCETUR,INSTANCEACTIVITY,ROOMTYPE"
+    }
+  ],
+  "changelogDate": "20160508220715",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no"
+}

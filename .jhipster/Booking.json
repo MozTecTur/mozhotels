@@ -1,0 +1,133 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "instanceRoomType",
+      "otherEntityName": "instanceRoomType",
+      "relationshipType": "many-to-many",
+      "otherEntityField": "instanceRoomTypeName",
+      "ownerSide": true
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "instanceRoomFacility",
+      "otherEntityName": "instanceRoomFacility",
+      "relationshipType": "many-to-many",
+      "otherEntityField": "instanceRoomFacilityName",
+      "ownerSide": true
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "tourist",
+      "otherEntityName": "tourist",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 4,
+      "relationshipName": "guestTourist",
+      "otherEntityName": "guestTourist",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 5,
+      "relationshipName": "instanceTur",
+      "otherEntityName": "instanceTur",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "instanceTurName"
+    },
+    {
+      "relationshipId": 6,
+      "relationshipName": "bookingPayment",
+      "otherEntityName": "bookingPayment",
+      "relationshipType": "one-to-one",
+      "ownerSide": false,
+      "otherEntityRelationshipName": "booking"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "checkIn",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "checkOut",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "peopleAdult",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "peopleChild",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "createdDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "editDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "state",
+      "fieldType": "IBookingState",
+      "fieldValues": "SUBMITED,IN_PROGRESS,BOOKING,CHECK_IN,CHECK_OUT,OVERBOOKING,CANCELED,FAILED",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "rooms",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "tax",
+      "fieldType": "Float",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 10,
+      "fieldName": "totalPrice",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160508220718",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no"
+}

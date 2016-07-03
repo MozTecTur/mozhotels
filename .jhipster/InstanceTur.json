@@ -1,0 +1,172 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "picture",
+      "otherEntityName": "picture",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "instanceTur"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "instanceContact",
+      "otherEntityName": "instanceContact",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "instanceTur"
+    },
+    {
+      "relationshipId": 3,
+      "relationshipName": "instanceResource",
+      "otherEntityName": "instanceFacility",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "instanceTur"
+    },
+    {
+      "relationshipId": 4,
+      "relationshipName": "instanceActivity",
+      "otherEntityName": "instanceActivity",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "instanceTur"
+    },
+    {
+      "relationshipId": 5,
+      "relationshipName": "instanceRoomType",
+      "otherEntityName": "instanceRoomType",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "instanceTur"
+    },
+    {
+      "relationshipId": 6,
+      "relationshipName": "instancePolicy",
+      "otherEntityName": "instancePolicy",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "instanceTur"
+    },
+    {
+      "relationshipId": 7,
+      "relationshipName": "instanceInfo",
+      "otherEntityName": "instanceInfo",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "instanceTur"
+    },
+    {
+      "relationshipId": 8,
+      "relationshipName": "instanceReview",
+      "otherEntityName": "instanceReview",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "instanceTur"
+    },
+    {
+      "relationshipId": 9,
+      "relationshipName": "booking",
+      "otherEntityName": "booking",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "instanceTur"
+    },
+    {
+      "relationshipId": 10,
+      "relationshipName": "localTur",
+      "otherEntityName": "localTur",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "localTurName"
+    },
+    {
+      "relationshipId": 11,
+      "relationshipName": "instanceTurType",
+      "otherEntityName": "instanceTurType",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "instanceTurTypeName"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "instanceTurName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "address",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "website",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "latitude",
+      "fieldType": "Double"
+    },
+    {
+      "fieldId": 7,
+      "fieldName": "longitude",
+      "fieldType": "Double"
+    },
+    {
+      "fieldId": 8,
+      "fieldName": "rooms",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 9,
+      "fieldName": "beds",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 10,
+      "fieldName": "floors",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 11,
+      "fieldName": "rating",
+      "fieldType": "CRating",
+      "fieldValues": "NA,ONE,TWO,THREE,FOUR,FIVE"
+    },
+    {
+      "fieldId": 12,
+      "fieldName": "currency",
+      "fieldType": "ECurrency",
+      "fieldValues": "MZN,USD,EUR,ZAR",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 13,
+      "fieldName": "contactNumberPrincipal",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldId": 14,
+      "fieldName": "photoPrincipal",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    }
+  ],
+  "changelogDate": "20160508220707",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "no"
+}

@@ -1,0 +1,47 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "booking",
+      "otherEntityName": "booking",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "guestTourist"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "lastName",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "countryResidence",
+      "fieldType": "ACountry",
+      "fieldValues": "MOZAMBIQUE"
+    }
+  ],
+  "changelogDate": "20160508220717",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no"
+}

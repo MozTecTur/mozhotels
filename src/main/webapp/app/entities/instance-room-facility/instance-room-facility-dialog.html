@@ -1,0 +1,86 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myInstanceRoomFacilityLabel" translate="mozhotelsApp.instanceRoomFacility.home.createOrEditLabel">Create or edit a InstanceRoomFacility</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.instanceRoomFacility.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceRoomFacility.instanceRoomFacilityName" for="field_instanceRoomFacilityName">InstanceRoomFacilityName</label>
+            <input type="text" class="form-control" name="instanceRoomFacilityName" id="field_instanceRoomFacilityName"
+                    ng-model="vm.instanceRoomFacility.instanceRoomFacilityName"
+                    required />
+            <div ng-show="editForm.instanceRoomFacilityName.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.instanceRoomFacilityName.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceRoomFacility.facility" for="field_facility">Facility</label>
+            <select class="form-control" name="facility" ng-model="vm.instanceRoomFacility.facility" id="field_facility" required>
+                <option value="SERVICE" translate="mozhotelsApp.BFacility.SERVICE">SERVICE</option>
+                <option value="RESOURCE" translate="mozhotelsApp.BFacility.RESOURCE">RESOURCE</option>
+            </select>
+            <div ng-show="editForm.facility.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.facility.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceRoomFacility.quantity" for="field_quantity">Quantity</label>
+            <input type="number" class="form-control" name="quantity" id="field_quantity"
+                    ng-model="vm.instanceRoomFacility.quantity"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceRoomFacility.area" for="field_area">Area</label>
+            <select class="form-control" name="area" ng-model="vm.instanceRoomFacility.area" id="field_area">
+                <option value="INDOOR" translate="mozhotelsApp.FInstanceArea.INDOOR">INDOOR</option>
+                <option value="OUTDOOR" translate="mozhotelsApp.FInstanceArea.OUTDOOR">OUTDOOR</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="mozhotelsApp.instanceRoomFacility.price" for="field_price">Price</label>
+            <input type="number" class="form-control" name="price" id="field_price"
+                    ng-model="vm.instanceRoomFacility.price"
+                    required />
+            <div ng-show="editForm.price.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.price.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.price.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="mozhotelsApp.instanceRoomFacility.instanceRoomFacilityType" for="field_instanceRoomFacilityType">instanceRoomFacilityType</label>
+            <select class="form-control" id="field_instanceRoomFacilityType" name="instanceRoomFacilityType" ng-model="vm.instanceRoomFacility.instanceRoomFacilityType" ng-options="instanceRoomFacilityType as instanceRoomFacilityType.instanceRoomFacilityTypeName for instanceRoomFacilityType in vm.instanceroomfacilitytypes track by instanceRoomFacilityType.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
